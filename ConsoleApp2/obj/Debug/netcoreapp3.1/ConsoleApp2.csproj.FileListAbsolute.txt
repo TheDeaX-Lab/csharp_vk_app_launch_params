@@ -1,0 +1,11 @@
+/home/deax/RiderProjects/ConsoleApp2/ConsoleApp2/bin/Debug/netcoreapp3.1/ConsoleApp2
+/home/deax/RiderProjects/ConsoleApp2/ConsoleApp2/bin/Debug/netcoreapp3.1/ConsoleApp2.deps.json
+/home/deax/RiderProjects/ConsoleApp2/ConsoleApp2/bin/Debug/netcoreapp3.1/ConsoleApp2.runtimeconfig.json
+/home/deax/RiderProjects/ConsoleApp2/ConsoleApp2/bin/Debug/netcoreapp3.1/ConsoleApp2.runtimeconfig.dev.json
+/home/deax/RiderProjects/ConsoleApp2/ConsoleApp2/bin/Debug/netcoreapp3.1/ConsoleApp2.dll
+/home/deax/RiderProjects/ConsoleApp2/ConsoleApp2/bin/Debug/netcoreapp3.1/ConsoleApp2.pdb
+/home/deax/RiderProjects/ConsoleApp2/ConsoleApp2/obj/Debug/netcoreapp3.1/ConsoleApp2.csprojAssemblyReference.cache
+/home/deax/RiderProjects/ConsoleApp2/ConsoleApp2/obj/Debug/netcoreapp3.1/ConsoleApp2.AssemblyInfoInputs.cache
+/home/deax/RiderProjects/ConsoleApp2/ConsoleApp2/obj/Debug/netcoreapp3.1/ConsoleApp2.AssemblyInfo.cs
+/home/deax/RiderProjects/ConsoleApp2/ConsoleApp2/obj/Debug/netcoreapp3.1/ConsoleApp2.dll
+/home/deax/RiderProjects/ConsoleApp2/ConsoleApp2/obj/Debug/netcoreapp3.1/ConsoleApp2.pdb
