@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Text.Encodings.Web;
 using System.Web;
 
 namespace ConsoleApp2
@@ -17,7 +16,7 @@ namespace ConsoleApp2
 
         private static Boolean IsValid(IDictionary<string, string> queryParams, string secretKey)
         {
-            var checkString = queryParams.Select(v => v)
+            var checkString = queryParams
                 .Where(v => v.Key.StartsWith("vk_"))
                 .OrderBy(kvp => kvp.Key)
                 .Select(kvp => $"{kvp.Key}={kvp.Value}")
@@ -40,7 +39,6 @@ namespace ConsoleApp2
             var decodedParams = HttpUtility.ParseQueryString(UrlString.Split("?")[1]);
             foreach (var key in  decodedParams.AllKeys)
             {
-                Console.WriteLine(key);
                 dict.Add(key, decodedParams[key]);
             }
             Console.WriteLine(IsValid(dict, SecretKey));

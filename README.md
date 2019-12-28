@@ -9,7 +9,6 @@
             var decodedParams = HttpUtility.ParseQueryString(UrlString.Split("?")[1]);
             foreach (var key in  decodedParams.AllKeys)
             {
-                Console.WriteLine(key);
                 dict.Add(key, decodedParams[key]);
             }
             Console.WriteLine(IsValid(dict, SecretKey));
