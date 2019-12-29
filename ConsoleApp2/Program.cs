@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web;
 
 namespace ConsoleApp2
 {
@@ -16,11 +15,12 @@ namespace ConsoleApp2
 
         private static Boolean IsValid(IDictionary<string, string> queryParams, string secretKey)
         {
-            var checkString = queryParams
-                .Where(v => v.Key.StartsWith("vk_"))
-                .OrderBy(kvp => kvp.Key)
-                .Select(kvp => $"{kvp.Key}={kvp.Value}")
-                .Aggregate((k1, k2) => $"{k1}&{k2}");
+            var checkString = 
+            queryParams
+            .Where(v => v.Key.StartsWith("vk_"))
+            .OrderBy(kvp => kvp.Key)
+            .Select(kvp => $"{kvp.Key}={kvp.Value}")
+            .Aggregate((k1, k2) => $"{k1}&{k2}");
             using (var hmac = new HMACSHA256(StringEncoder.GetBytes(secretKey)))
             {
                 var signByte = hmac.ComputeHash(StringEncoder.GetBytes(checkString));
