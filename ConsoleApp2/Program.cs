@@ -20,8 +20,7 @@ namespace ConsoleApp2
                 .Where(v => v.Key.StartsWith("vk_"))
                 .OrderBy(kvp => kvp.Key)
                 .Select(kvp => $"{kvp.Key}={kvp.Value}")
-                .Aggregate((k1, k2) => $"{k1}&{k2}")
-                .Replace(",", "%2C");
+                .Aggregate((k1, k2) => $"{k1}&{k2}");
             using (var hmac = new HMACSHA256(StringEncoder.GetBytes(secretKey)))
             {
                 var signByte = hmac.ComputeHash(StringEncoder.GetBytes(checkString));
@@ -35,12 +34,11 @@ namespace ConsoleApp2
 
         static void Main()
         {
-            var dict = new Dictionary<string, string>();
-            var decodedParams = HttpUtility.ParseQueryString(UrlString.Split("?")[1]);
-            foreach (var key in  decodedParams.AllKeys)
-            {
-                dict.Add(key, decodedParams[key]);
-            }
+            Dictionary<string, string> dict = UrlString
+                .Split("?")[1]
+                .Split("&")
+                .Select(t => t.Split("="))
+                .ToDictionary(t => t[0], t => t[1]);
             Console.WriteLine(IsValid(dict, SecretKey));
         }
     }
